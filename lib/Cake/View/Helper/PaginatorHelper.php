@@ -467,6 +467,8 @@ class PaginatorHelper extends AppHelper {
 			if (!empty($disabledTitle) && $disabledTitle !== true) {
 				$title = $disabledTitle;
 			}
+                        if ($options['tag'] != $_defaults['tag'])
+                                $_defaults['tag'] = $options['tag'];
 			$options = array_merge($_defaults, (array)$disabledOptions);
 		} elseif (!$this->{$check}($options['model'])) {
 			return null;
